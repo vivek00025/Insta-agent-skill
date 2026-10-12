@@ -1,0 +1,20 @@
+Instagram agent skill - checked copy (Windows install)
+
+Contents: 13 skills (skills\ig-*), templates\voice.md, LICENSE.
+Removed from the original repo: plugin/marketplace files, .gitignore, README.
+Nothing here uses the network, runs other programs, or executes downloaded code.
+Run verify in PowerShell to confirm files are unchanged: see SHA256SUMS.txt
+
+1. Right-click the zip > Extract All.
+2. Open PowerShell inside the extracted folder and run:
+
+   mkdir "$HOME\.claude\skills" -Force
+   Copy-Item -Recurse .\skills\ig-* "$HOME\.claude\skills\"
+   mkdir "$HOME\.claude\instagram" -Force
+   Copy-Item .\templates\voice.md "$HOME\.claude\instagram\voice.md"
+
+3. Start Claude Code (type: claude) and type /ig-reel
+4. Edit voice.md in Notepad to describe how you talk on camera.
+
+Python 3 is needed for the scorers (python.org). If "python3" is not found,
+use "python" or "py" instead.
